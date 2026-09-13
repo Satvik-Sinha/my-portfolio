@@ -1,15 +1,18 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { navItems } from "@/data";
 
-import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
 import Footer from "@/components/Footer";
 import Clients from "@/components/Clients";
-import Approach from "@/components/Approach";
 import Experience from "@/components/Experience";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
+
+// Dynamically import components with canvas / three.js / DOM animations
+const Hero = dynamic(() => import("@/components/Hero"), { ssr: false });
+const Grid = dynamic(() => import("@/components/Grid"), { ssr: false });
+const Approach = dynamic(() => import("@/components/Approach"), { ssr: false });
 
 const Home = () => {
   return (
